@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import Index from "./pages/Index";
 import Matches from "./pages/Matches";
 import MatchDetail from "./pages/MatchDetail";
@@ -16,8 +15,8 @@ import MyTickets from "./pages/MyTickets";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
-  // Create a new QueryClient instance inside the component
-  const [queryClient] = useState(() => new QueryClient());
+  // Create a QueryClient instance directly 
+  const queryClient = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClient}>
