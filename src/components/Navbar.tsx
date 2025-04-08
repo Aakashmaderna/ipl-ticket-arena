@@ -12,27 +12,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/ipl-logo.png" alt="IPL Logo" className="h-10 w-auto" onError={(e) => {
-              e.currentTarget.src = 'https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadline.png';
-            }} />
+            <img 
+              src="https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLLogoNew.png" 
+              alt="IPL Logo" 
+              className="h-12 w-auto" 
+              onError={(e) => {
+                e.currentTarget.src = 'https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadline.png';
+              }} 
+            />
             <span className="text-xl font-bold text-ipl-blue">Ticket Arena</span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-ipl-blue font-medium">Home</Link>
-            <Link to="/matches" className="text-gray-700 hover:text-ipl-blue font-medium">Matches</Link>
-            <Link to="/venues" className="text-gray-700 hover:text-ipl-blue font-medium">Venues</Link>
-            <Link to="/teams" className="text-gray-700 hover:text-ipl-blue font-medium">Teams</Link>
-            <Link to="/mytickets" className="text-gray-700 hover:text-ipl-blue font-medium">My Tickets</Link>
+            <Link to="/" className="text-gray-700 hover:text-ipl-blue font-medium transition-colors">Home</Link>
+            <Link to="/matches" className="text-gray-700 hover:text-ipl-blue font-medium transition-colors">Matches</Link>
+            <Link to="/venues" className="text-gray-700 hover:text-ipl-blue font-medium transition-colors">Venues</Link>
+            <Link to="/teams" className="text-gray-700 hover:text-ipl-blue font-medium transition-colors">Teams</Link>
+            <Link to="/mytickets" className="text-gray-700 hover:text-ipl-blue font-medium transition-colors">My Tickets</Link>
           </div>
 
           <div className="hidden md:block">
-            <Button variant="default" className="bg-ipl-blue text-white">Sign In</Button>
+            <Button variant="default" className="bg-ipl-blue hover:bg-ipl-blue/90 text-white transition-colors">Sign In</Button>
           </div>
 
           {/* Mobile menu button */}
